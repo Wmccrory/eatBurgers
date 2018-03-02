@@ -4,10 +4,10 @@
 var connection = require("./connection.js");
 
 var orm = {
-	selectAll : function(table, cb) {
-		var queryString = "SELECT * FROM (??)";
+	selectAll : function(table, value, cb) {
+		var queryString = "SELECT * FROM (??) WHERE devoured=(?)";
 
-		connection.query(queryString, [table], function (err, result) {
+		connection.query(queryString, [table, value], function (err, result) {
 			if (err) throw err;
 			cb(result);
 		})
