@@ -7,7 +7,6 @@ $(function () {
 	//Submitting new sin
 	$(".createForm").on("submit", function(event) {
 		event.preventDefault();
-
 		if ($("#userEntry").val().trim().length === 0) {
 			return
 		}
@@ -15,8 +14,6 @@ $(function () {
 		var newSin = {
 			name: $("#userEntry").val().trim()
 		}
-
-		console.log(newSin);
 
 		$.ajax("api/sins", {
 			type: "POST",
@@ -35,9 +32,6 @@ $(function () {
 		var newDevourState = {
 			id: id,
 		}
-
-		console.log(id);
-		console.log(newDevourState);
 
 		$.ajax("api/sins/" + id, {
 			type: "PUT",
