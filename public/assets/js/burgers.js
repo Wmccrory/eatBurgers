@@ -18,7 +18,7 @@ $(function () {
 			type: "POST",
 			data: newSin
 		}).then(function() {
-			console.log("created new sin");
+			$(".modal").show(1000);
 		})
 	});
 
@@ -38,7 +38,7 @@ $(function () {
 			type: "PUT",
 			data: newDevourState
 		}).then(function() {
-			console.log("Eaten sin");
+			$(".modal").show(1000);
 		})
 	})
 });

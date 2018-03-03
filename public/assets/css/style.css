@@ -6,10 +6,7 @@
 html {
 	min-height: 100%;
 	font-size: 13.666px;
-/*	@font-face {
-		font-family: 'blackLetter';
-		src: url('./../font/blackLetter.ttf');
-	}*/
+	overflow-y: scroll;
 }
 
 body {
@@ -63,15 +60,19 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	z-index: 15;
 }
 
 /*------------------------------------------------------------------*/
 
 img {
-	border: solid 5px #000;
+	border: solid 10px #000;
 	border-radius: 20px;
 	box-shadow: 9px 9px 71px 5px rgba(0,0,0,0.75);
 }
+
+/*------------------------------------------------------------------*/
+
 /*main index*/
 
 .titleSplash {
@@ -166,6 +167,45 @@ img {
 	opacity:0.9;
 	transition: opacity 2s;
 	user-select: none;
+}
+
+.devouredList {
+	justify-content: center;
+}
+
+/*------------------------------------------------------------------*/
+
+
+/*modal*/
+
+.modal {
+	display: none;
+}
+.modal img {
+	filter: brightness(80%);
+}
+
+.modalBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 14;
+}
+
+.modalForeground {
+	position: fixed;
+	top:10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 15;
+}
+
+.modalText {
+	text-align: center;
+	width: 100%;
 }
 
 /*------------------------------------------------------------------*/

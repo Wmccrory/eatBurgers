@@ -23,11 +23,11 @@ router.get("/absolution", function(req, res) {
 router.get("/easements", function(req, res) {
 	burger.eaten(function(data) {
 		var devouredSin = {
-			sins: data
+			sin: data
 		};
 
 		console.log(devouredSin);
-		res.render("easements");
+		res.render("easements",devouredSin);
 	});
 });
 
