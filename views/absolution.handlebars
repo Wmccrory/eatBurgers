@@ -1,2 +1,12 @@
-<h1>Hello</h1>
-<h2>Choose a sin to eat</h2>
+<div class="confessionSplash">
+	<img src="../assets/img/sineater.png" alt="The Sin-Eater emerges" />
+	<div class="confessionText">
+		<h1>Thou wishes to absolve another's damnation into thine own body?</h1>
+		<h1>Then make thine choice:</h1>
+	</div>
+</div>
+
+
+	{{#each sin}}
+		{{> devouredBlock container="sinList" eaten=true consume="I shall consume this rot"}}
+	{{/each}}

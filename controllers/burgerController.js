@@ -13,11 +13,10 @@ router.get("/", function(req, res) {
 router.get("/absolution", function(req, res) {
 	burger.all(function(data) {
 		var openSin = {
-			sins: data
+			sin: data
 		};
 
-		console.log(openSin);
-		res.render("absolution");
+		res.render("absolution",openSin);
 	});
 });
 
@@ -37,11 +36,17 @@ router.get("/confess", function(req, res) {
 })
 
 router.post("/api/sins", function(req, res) {
-	burger.insert(
-		req.body.userEntry, function(result) {
-		// Send back the ID of the new quote
+	burger.insert(req.body.name, function(result) {
 		res.json({ id: result.insertId });
 	});
+});
+
+router.put("/api/sins/:id", function(req, res) {
+	condition = req.params.id;
+	console.log(condition);
+	burger.devour(condition, function(result) {
+		res.json({id: result.insertId})
+	})
 });
 
 module.exports = router;

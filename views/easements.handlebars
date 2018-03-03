@@ -1,2 +1,13 @@
-<h1>Hello</h1>
-<h2>View sins that have been transferred</h2>
+<div class="confessionSplash">
+	<img src="../assets/img/testament.png" alt="The Record of Easements" />
+	<div class="confessionText">
+		<h1>Before you lies a record of easements for the dead</h1>
+
+		<h1>Gaze upon the meals of previous sin-eaters:</h1>
+	</div>
+</div>
+
+
+	{{#each sin}}
+		{{> devouredBlock container="sinList" eaten=true consume="I shall consume this rot"}}
+	{{/each}}
