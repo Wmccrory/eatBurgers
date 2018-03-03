@@ -10,6 +10,18 @@ var connection = mysql.createConnection({
 	database: "sineaterdb"
 });
 
+if (process.env.JAWSDB_URL) {
+	connection = mysql.createConnection(process.eng.JAWSDB_URL);
+} else {
+	connection = mysql.createConnection({
+		host: "localhost",
+		user: "root",
+		password: "",
+		database: "sineaterdb"
+	});
+};
+
+
 
 connection.connect(function(err) {
 if (err) {
