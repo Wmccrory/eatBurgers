@@ -8,6 +8,10 @@ $(function () {
 	$(".createForm").on("submit", function(event) {
 		event.preventDefault();
 
+		if ($("#userEntry").val().trim().length === 0) {
+			return
+		}
+
 		var newSin = {
 			name: $("#userEntry").val().trim()
 		}
@@ -24,6 +28,7 @@ $(function () {
 
 	//Eating a sin
 	$(".sinEat").on("click", function(event) {
+
 		var id = $(this).data("id");
 		var data = $(this).data("eat");
 
